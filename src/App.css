@@ -1,0 +1,314 @@
+
+/* Make the entire page a flex container to position the footer at the bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  /* Make body take the full viewport height */
+  margin: 0;
+  font-family: 'Itim';
+}
+
+header {
+  background-color: #45A14A;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  flex-shrink: 0;  /* Prevent header from shrinking */
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img:hover {
+  opacity: 0.5;
+}
+
+.tabs {
+  background-color:  #D3BF4A;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 5;
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.tabs a:hover {
+  background: #ddd;
+}
+
+.index {
+  background-color: rgba(255, 240, 201, 1);
+}
+
+.index h2  {
+  text-align: center;
+}
+
+/* Carousel container: cover most of the screen */
+.custom-carousel {
+  max-width: 100%;  /* Ensure it doesn't exceed screen width */
+  height: 70vh;    /* Make the carousel fill the height of the viewport */
+  margin: 0;
+}                       
+
+.about {
+  max-width: 100%;
+  height: 77vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  margin: 100px;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 2rem;
+  text-align: justify;
+}
+
+.login {
+   height: 77vh;
+  background-image: url('corn.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+}
+
+.login-container {
+   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5); /* White background with semi-transparency */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow */  
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 7px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #45A14A;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #65eb6c;
+}
+
+.custom-carousel .carousel-item img {
+  width: 100%;      /* Ensure image width fits the container */
+  height: 70vh;    /* Image height covers the entire screen */
+  object-fit: cover; /* Ensure the image covers the space without distortion */
+}
+
+/* Optional: Adjust carousel caption */
+.custom-carousel .carousel-caption {
+  font-size: 14px;
+  bottom: 10%;
+  color: #fff; /* White text for better visibility */
+}
+
+.dashboard {
+  background-image: url('corn.jpg');
+  height: 77vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.dashboard-child {
+  padding: 20px;
+  margin: 20px;
+  margin-left: 30px;
+  height: 60%;
+  width: 22%;
+  background-color: rgba(255, 255, 255, 0.5); /* White background with semi-transparency */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow */  
+}
+
+.dashboard-child:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard a {
+  text-decoration: none !important;
+}
+
+.dashboard-child h3 {
+  text-decoration: none !important;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.dashboard-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    justify-content: center;
+  }
+
+  .dashboard-child {
+    height: 40%;
+    width: 40%;
+    margin: 20px 0;
+    margin-right: 20px;
+    padding: 20px;
+  }
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.show-db-btn {
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.show-db-btn:hover {
+  background-color: #0056b3;
+}
+
+.calendar, .weather-widget {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Calendar */
+.calendar {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Weather Widget */
+.weather-widget {
+  text-align: center;
+}
+
+.weather-widget h4 {
+  margin: 10px 0;
+}
+
+.weather-widget p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Right Section */
+.main-content {
+  flex-grow: 1;
+  background-color: #eaeaea;
+  padding: 20px;
+}
+
+/* Stats Graphic */
+.stats-graphic {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+footer {
+  background-color: #45A14A;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;  /* Prevent footer from shrinking */
+  z-index: 1;
+  width: 100%;
+}
+
+footer .logo {
+  margin-left: auto;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Ensure the footer is always at the bottom, even if content is minimal */
+.main-content {
+  flex-grow: 1; /* Make sure the content area takes up remaining space */
+}
+
