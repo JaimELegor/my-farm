@@ -8,7 +8,7 @@ function Ganado() {
       <div className="sidebar">
         <button className="show-db-btn">Show Database</button>
         <div className="calendar">
-          <div>September 2024</div>
+          <div>September 2025</div>
         </div>
         <div className="weather-widget">
           <h4>Weather</h4>
