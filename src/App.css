@@ -287,6 +287,44 @@ header {
   }
 }
 
+.meta-tb {
+  display: flex;
+  justify-content: center;
+}
+
+.tb-container {
+  height: 77vh;
+  width: 80%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.tb-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tb-header {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tb-menu {
+  width: 100%;
+  padding: 10px;
+}
+
+.tb-menu button {
+  width: 45%;
+  margin-right: 10px;
+}
+
 footer {
   background-color: #45A14A;
   padding: 20px;

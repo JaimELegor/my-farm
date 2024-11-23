@@ -6,7 +6,9 @@ function Ganado() {
     <>
       <Header tabs={false} />
       <div className="sidebar">
-        <button className="show-db-btn">Show Database</button>
+        <a href="/dashboard/ganado/show">
+          <button className="show-db-btn">Show Database</button>
+        </a>
         <div className="calendar">
           <div>September 2025</div>
         </div>

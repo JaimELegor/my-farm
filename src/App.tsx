@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { UserProvider } from './Context/useAuth';
 import Protected from './Protected';
 import Ganado from './Ganado';
+import Tabla from './Tabla';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/dashboard' element={<Protected><Dashboard /></Protected>} />
             <Route path='/dashboard/ganado' element={<Protected><Ganado /></Protected>} />
+            <Route path='/dashboard/ganado/show' element={<Protected><Tabla /></Protected>} />
           </Routes>
         </UserProvider>
       </Router>

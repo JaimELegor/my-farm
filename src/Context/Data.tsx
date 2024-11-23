@@ -1,11 +1,11 @@
 
 import { handleError } from "./ErrorHandler";
 import axios from "axios";
-import { UserProfileToken } from "./User";
-
+//import { UserProfileToken } from "./User";
 
 const api = "http://localhost/my-farm-api/";
 
+/*
 export const loginAPI = async (username: string, password: string) => {
   try {
     const data = await axios.post<UserProfileToken>(api + "login", {
@@ -16,8 +16,8 @@ export const loginAPI = async (username: string, password: string) => {
   } catch (error) {
     handleError(error);
   }
-};
-
+};*/
+/*
 export const registerAPI = async (email: string, username: string, password: string) => {
   try {
     const data = await axios.post<UserProfileToken>(api + "register", {
@@ -29,4 +29,4 @@ export const registerAPI = async (email: string, username: string, password: str
   } catch (error) {
     handleError(error);
   }
-};
+};*/
