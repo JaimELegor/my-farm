@@ -14,6 +14,7 @@ import { UserProvider } from './Context/useAuth';
 import Protected from './Protected';
 import Ganado from './Ganado';
 import Tabla from './Tabla';
+import Form from './Form';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/dashboard' element={<Protected><Dashboard /></Protected>} />
             <Route path='/dashboard/ganado' element={<Protected><Ganado /></Protected>} />
             <Route path='/dashboard/ganado/show' element={<Protected><Tabla /></Protected>} />
+            <Route path='/edit' element={<Form />} />
           </Routes>
         </UserProvider>
       </Router>
