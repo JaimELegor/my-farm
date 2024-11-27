@@ -10,6 +10,12 @@ pipeline {
                 }
             }
         }
+        stage('Build image') {
+          checkout scm
+          def dockerfile = 'my-farm/Dockerfile'
+          def customImage = docker.build("react-app-jimmy",
+                                         "-f ${dockerfile} /my-farm")
+        }
     }
 }
 
