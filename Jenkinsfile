@@ -2,9 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Clone repo') {
             steps {
-                echo 'Hello World2'
+                rm my-farm
+                git clone https://github.com/JaimELegor/my-farm.git
+                cd my-farm
             }
         }
     }
