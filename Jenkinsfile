@@ -4,9 +4,11 @@ pipeline {
     stages {
         stage('Clone repo') {
             steps {
-                rm my-farm
-                git clone https://github.com/JaimELegor/my-farm.git
-                cd my-farm
+              script {
+                  sh "rm my-farm"
+                  sh "git clone https://github.com/JaimELegor/my-farm.git"
+                  sh "cd my-farm"
+                }
             }
         }
     }
