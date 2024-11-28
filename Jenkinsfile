@@ -19,8 +19,7 @@ pipeline {
         stage('Build image') {
           steps {
               script {
-                  def dockerfile = 'my-farm/Dockerfile'
-                  def customImage = docker.build("react-app-jimmy","-f ${dockerfile} /my-farm")
+                  def customImage = docker.build(".")
                 }
             }
         }
