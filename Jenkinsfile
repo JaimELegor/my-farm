@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        nodejs 'NodeJS'
+    }
     stages {
         stage('Clone repo') {
             steps {
@@ -11,10 +13,12 @@ pipeline {
             }
         }
         stage('Build image') {
-          checkout scm
-          def dockerfile = 'my-farm/Dockerfile'
-          def customImage = docker.build("react-app-jimmy",
-                                         "-f ${dockerfile} /my-farm")
+          steps {
+              script {
+                  def dockerfile = 'my-farm/Dockerfile'
+                  def customImage = docker.build("react-app-jimmy","-f ${dockerfile} /my-farm")
+                }
+            }
         }
     }
 }
