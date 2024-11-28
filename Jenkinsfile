@@ -22,8 +22,8 @@ pipeline {
         stage('Build image') {
           steps {
               script {
-                  sh "docker build -t vite-react-app:v5 . --network=host"
-                  sh "docker tag vite-react-app:v5 jaimelegor/vite-react-app:v5"
+                  sh "docker build -t vite-react-app:latest . --network=host"
+                  sh "docker tag vite-react-app:latest jaimelegor/vite-react-app:latest"
                 }
             }
         }
