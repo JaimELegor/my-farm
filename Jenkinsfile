@@ -19,7 +19,7 @@ pipeline {
         stage('Build image') {
           steps {
               script {
-                  def customImage = docker.build("react-app-jimmy:v1",".","--network=host")
+                  sh "docker build -t vite-react-app:latest . --network=host"
                 }
             }
         }
