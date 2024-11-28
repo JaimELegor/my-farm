@@ -8,11 +8,11 @@ function Dashboard() {
       <div className='dashboard'>
         <a href='/dashboard/ganado' className='dashboard-child'>
           <h3>GANADO</h3>
-          <img src='ganado.png' alt='lol' />
+          <img src='/src/assets/ganado.png' alt='lol' />
         </a>
         <a href='/dashboard/alimento' className='dashboard-child'>
           <h3>ALIMENTO</h3>
-          <img src='alimento.png' alt='lol' />
+          <img src='/src/assets/alimento.png' alt='lol' />
         </a>
         <a href='/dashboard/granjero' className='dashboard-child'>
           <h3>GRANJERO</h3>
@@ -20,7 +20,7 @@ function Dashboard() {
         </a>
         <a href='/dashboard/tratamiento' className='dashboard-child'>
           <h3>TRATAMIENTO</h3>
-          <img src='tratamiento.png' alt='lol' />
+          <img src='/src/assets/tratamiento.png' alt='lol' />
         </a>
       </div>
       <Footer />

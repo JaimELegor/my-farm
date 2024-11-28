@@ -6,7 +6,7 @@ function Header({ tabs }: Props) {
       <header>
         <a href="/">
           <div className="logo">
-            <img src="../logo.png" alt="Logo" width="150" />
+            <img src="/src/assets/logo.png" alt="Logo" width="150" />
           </div>
         </a>
       </header>

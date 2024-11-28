@@ -12,13 +12,13 @@ function Index() {
         <h2>Noticias MyFarm</h2>
         <Carousel className='custom-carousel'>
           <Carousel.Item>
-            <img className='d-block w-100' src='vaca.jpg' alt='First' />
+            <img className='d-block w-100' src='/src/assets/vaca.jpg' alt='First' />
           </Carousel.Item>
           <Carousel.Item>
-            <img className='d-block w-100' src='vaca2.jpg' alt='Second' />
+            <img className='d-block w-100' src='/src/assets/vaca2.jpg' alt='Second' />
           </Carousel.Item>
           <Carousel.Item>
-            <img className='d-block w-100' src='vaca3.jpg' alt='Third' />
+            <img className='d-block w-100' src='/src/assets/vaca3.jpg' alt='Third' />
           </Carousel.Item>
         </Carousel>
       </div>

@@ -16,7 +16,7 @@ function Footer() {
       </div>
       <div>&copy; 2024 MyFarm. All rights reserved.</div>
       <div className="logo">
-        <img src="../logo.png" alt="Company Logo" width="100" />
+        <img src="/src/assets/logo.png" alt="Company Logo" width="100" />
       </div>
     </footer>
   )
