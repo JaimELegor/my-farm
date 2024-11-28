@@ -44,7 +44,7 @@ pipeline {
         stage('Exec') {
             steps {
                 script {
-                    sh "python3 /home/toor/python-api-automation/`refresh-containers.py"
+                    sh "python3 /home/toor/python-api-automation/refresh-containers.py"
                   }
               }
           }
