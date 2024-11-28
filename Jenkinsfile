@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        nodejs 'NodeJS'
+    }
     stages {
         stage('Setup') {
             steps {
@@ -16,6 +19,11 @@ pipeline {
                 }
             }
         }
+        stage('Install node dependencies') {
+            steps {
+                sh 'npm install'
+              }
+          }
         stage('Build image') {
           steps {
               script {
