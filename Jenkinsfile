@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        stage('Setup') {
+            steps {
+                dir ('my-farm') {
+                    deleteDir()
+                  }
+              }
+        }
         stage('Clone repo') {
             steps {
               script {
