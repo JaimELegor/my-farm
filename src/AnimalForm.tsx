@@ -10,7 +10,6 @@ import { AnimalFormData } from './Context/Animal';
 import { toast } from 'react-toastify';
 import { animalAPI } from './Context/Auth';
 import { format } from 'date-fns';
-import { Store } from '@mui/icons-material';
 
 const validation = Yup.object().shape({
   id_animal: Yup.number().required("El id del animal es requerido"),
