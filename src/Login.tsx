@@ -1,14 +1,15 @@
 import Header from "./Header";
 import Footer from "./Footer";
+
 import * as Yup from "yup";
 import { useAuth } from "./Context/useAuth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-
 type LoginFormsInputs = {
   userName: string;
   password: string;
 };
+
 
 const validation = Yup.object().shape({
   userName: Yup.string().required("El nombre de usuario es requerido"),
@@ -17,13 +18,13 @@ const validation = Yup.object().shape({
 
 function Login() {
   const { loginUser } = useAuth();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm<LoginFormsInputs>({ resolver: yupResolver(validation) });
-
   const handleLogin = (form: LoginFormsInputs) => {
     loginUser(form.userName, form.password);
     reset();

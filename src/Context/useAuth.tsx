@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { UserProfile } from "./User"
 import { useNavigate } from "react-router-dom";
-import { loginAPI, registerAPI } from "./Auth";
+import { animalAPI, loginAPI, registerAPI } from "./Auth";
 import { toast } from "react-toastify";
 import React from "react";
 import axios from "axios";
@@ -53,6 +53,7 @@ export const UserProvider = ({ children }: Props) => {
     }).catch((e) => toast.warning("Error del servidor :("));
   };
 
+
   const loginUser = async (username: string, password: string) => {
     await loginAPI(username, password).then((res) => {
       if (res && res.data?.token) {
@@ -75,10 +76,10 @@ export const UserProvider = ({ children }: Props) => {
       toast.warning("Error del servidor");
     });
   };
-
   const isLoggedIn = () => {
     return !!user;
   };
+
 
   const logout = () => {
     localStorage.removeItem("token");

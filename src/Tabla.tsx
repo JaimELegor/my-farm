@@ -13,6 +13,8 @@ interface APIresponse {
   data: TableData[];
 }
 
+
+
 function Tabla() {
   const navigate = useNavigate();
   const api = "http://localhost/my-farm-api/db/ANIMAL";
@@ -52,8 +54,14 @@ function Tabla() {
 
   const handleEditClick = () => {
     if (selectedRow) {
+
+      localStorage.setItem('animal', JSON.stringify(selectedRow));
       navigate("/edit");
     }
+  };
+
+  const handleAddClick = () => {
+    navigate("/edit");
   };
 
   return (
@@ -65,7 +73,12 @@ function Tabla() {
           <div className='tb-header-container'>
             <div className='tb-header'>
               <div className='tb-menu'>
-                <button className="btn btn-success">Agregar</button>
+                <button
+                  className="btn btn-success"
+                  onClick={handleAddClick}
+                >
+                  Agregar
+                </button>
                 <button
                   className="btn btn-primary"
                   onClick={handleEditClick}

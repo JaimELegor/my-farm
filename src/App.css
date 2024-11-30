@@ -45,7 +45,7 @@ header {
 }
 
 .index {
-  background-color: rgba(255, 0, 0, 0.3);
+  background-color: rgba(255, 240, 201, 1);
 }
 
 .index h2  {
@@ -83,7 +83,7 @@ header {
 
 .login {
    height: 77vh;
-  background-image: url('corn.jpg');
+  background-image: url('/src/assets/corn.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
