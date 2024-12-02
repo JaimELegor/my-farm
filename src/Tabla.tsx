@@ -13,11 +13,14 @@ interface APIresponse {
   data: TableData[];
 }
 
+interface Props {
+  tabla: string;
+}
 
+function Tabla({ tabla }: Props) {
 
-function Tabla() {
   const navigate = useNavigate();
-  const api = "http://localhost/my-farm-api/db/ANIMAL";
+  const api = "http://localhost/my-farm-api/db/" + tabla;
   const [data, setData] = useState<APIresponse | null>(null);
   const [error, setError] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>(""); // State for search term
@@ -26,8 +29,15 @@ function Tabla() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<APIresponse>(api);
+        const response = await axios.get<APIresponse>(api,
+          {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+          }
+        );
         setData(response.data);
+        console.log(response.data);
       } catch (err) {
         setError("No se encontraron datos");
       }
@@ -55,13 +65,13 @@ function Tabla() {
   const handleEditClick = () => {
     if (selectedRow) {
 
-      localStorage.setItem('animal', JSON.stringify(selectedRow));
-      navigate("/edit");
+      localStorage.setItem(tabla, JSON.stringify(selectedRow));
+      navigate("/edit" + tabla);
     }
   };
 
   const handleAddClick = () => {
-    navigate("/edit");
+    navigate("/edit" + tabla);
   };
 
   return (
@@ -69,7 +79,7 @@ function Tabla() {
       <Header tabs={false} />
       <div className='meta-tb'>
         <div className='tb-container'>
-          <h1>Ganado</h1>
+          <h1>{tabla}</h1>
           <div className='tb-header-container'>
             <div className='tb-header'>
               <div className='tb-menu'>

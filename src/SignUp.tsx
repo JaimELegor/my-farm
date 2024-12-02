@@ -25,8 +25,12 @@ type LoginFormsInputs = {
   confirmPassword: string;
 };
 
-function SignUp() {
-  const { registerUser } = useAuth();
+interface Props {
+  edit: boolean;
+}
+
+function SignUp({ edit }: Props) {
+  const { logout, registerUser, editUser } = useAuth();
   const {
     register,
     handleSubmit,
@@ -35,15 +39,24 @@ function SignUp() {
   } = useForm<LoginFormsInputs>({ resolver: yupResolver(validation) });
 
   const handleLogin = (form: LoginFormsInputs) => {
-    registerUser(form.email, form.userName, form.password);
+    if (edit) {
+      editUser(form.email, form.userName, form.password);
+    } else {
+      registerUser(form.email, form.userName, form.password);
+    }
     reset();
   };
 
+  const handleLogout = () => logout();
+
   return (
     <>
-      <Header tabs={true} />
+      <Header tabs={!edit} />
       <div className="login">
         <div className="login-container">
+          <div className="show-db-bar">
+            <button onClick={handleLogout} className="show-db-btn" style={{ backgroundColor: 'red' }}>Logout</button>
+          </div>
           <h2>Sign Up</h2>
           <form onSubmit={handleSubmit(handleLogin)}>
             <div className="login-input-group">

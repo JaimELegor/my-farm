@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Footer from './Footer';
 import Header from './Header';
@@ -10,6 +11,7 @@ import { AnimalFormData } from './Context/Animal';
 import { toast } from 'react-toastify';
 import { animalAPI } from './Context/Auth';
 import { format } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 
 const validation = Yup.object().shape({
   id_animal: Yup.number().required("El id del animal es requerido"),
@@ -84,6 +86,8 @@ function AnimalForm() {
   const [isStoredAnimal, setIsStoredAnimal] = useState<boolean>(false);
   const genderOptions = ['Macho', 'Hembra'];
   const speciesOptions = ['cattle', 'sheep', 'deer'];
+  const statusOptions = ['VIVO', 'MUERTO', 'ENFERMO', 'VENDIDO'];
+  const navigate = useNavigate();
 
   const handleChangeSpecies = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedSpecies = e.target.value;
@@ -106,13 +110,14 @@ function AnimalForm() {
       isStoredAnimal
     );
     reset();
-    localStorage.removeItem("animal");
+    localStorage.removeItem("ANIMAL");
+    navigate("/dashboard/animal/show");
   };
 
   var storedAnimal: string | null = null;
   var animalData: any = null;
   useEffect(() => {
-    storedAnimal = localStorage.getItem("animal");
+    storedAnimal = localStorage.getItem("ANIMAL");
     if (storedAnimal) {
       setIsStoredAnimal(true);
       animalData = JSON.parse(storedAnimal);
@@ -218,13 +223,18 @@ function AnimalForm() {
             {errors.peso ? <p>{errors.peso.message}</p> : ""}
             <div>
               <label htmlFor="estado">Estado:</label>
-              <input
-                type="text"
+              <select
                 id="estado"
                 required
-                placeholder='Ingrese el estado'
                 {...register("estado")}
-              />
+              >
+                <option value="">Seleccione estado:</option>
+                {statusOptions.map((status) => (
+                  <option key={status} value={status}>
+                    {status}
+                  </option>
+                ))}
+              </select>
             </div>
             {errors.estado ? <p>{errors.estado.message}</p> : ""}
             {breeds.length !== 0 && !loading ?

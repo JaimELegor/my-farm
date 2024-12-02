@@ -45,21 +45,36 @@ header {
 }
 
 .index {
-  background-color: rgba(255, 240, 201, 1);
+  background: url("/src/assets/corn.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.index h2  {
+.index h2, h3, h4  {
   text-align: center;
 }
 
 /* Carousel container: cover most of the screen */
 .custom-carousel {
-  max-width: 100%;  /* Ensure it doesn't exceed screen width */
+  width: 75%;  /* Ensure it doesn't exceed screen width */
   height: 70vh;    /* Make the carousel fill the height of the viewport */
   margin: 0;
-}                       
+}                      
+
+.carousel-main {
+  display: flex;
+  justify-content: center;
+}
 
 .about {
+  background: url("/src/assets/corn.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   max-width: 100%;
   height: 77vh;
   display: flex;
@@ -69,6 +84,9 @@ header {
 
 .about-content {
   margin: 100px;
+  background-color: rgba(255, 255, 255, 0.5); /* White background with semi-transparency */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow */  
 }
 
 .about-content h2 {
@@ -93,7 +111,7 @@ header {
 }
 
 .login-container {
-   padding: 20px;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.5); /* White background with semi-transparency */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow */  
@@ -134,7 +152,7 @@ header {
 }
 
 .custom-carousel .carousel-item img {
-  width: 100%;      /* Ensure image width fits the container */
+  width: 75%;      /* Ensure image width fits the container */
   height: 70vh;    /* Image height covers the entire screen */
   object-fit: cover; /* Ensure the image covers the space without distortion */
 }
@@ -147,7 +165,7 @@ header {
 }
 
 .dashboard {
-  background-image: url('corn.jpg');
+  background-image: url('/src/assets/corn.jpg');
   height: 77vh;
   background-size: cover;
   background-position: center;
@@ -260,21 +278,37 @@ header {
   color: #555;
 }
 
+.stats {
+  background-image: url('/src/assets/corn.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 78vh;
+}
+
+.stats a {
+  background-color: rgb(255, 140, 0);
+  display: flex;
+  justify-content: center;
+  width: 147px;
+}
+
 /* Right Section */
 .main-content {
   flex-grow: 1;
-  background-color: #eaeaea;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Stats Graphic */
 .stats-graphic {
   width: 100%;
-  height: 300px;
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -288,6 +322,10 @@ header {
 }
 
 .meta-tb {
+  background-image: url('/src/assets/corn.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
 }
@@ -296,7 +334,7 @@ header {
   height: 77vh;
   width: 80%;
   max-width: 1200px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -326,6 +364,10 @@ header {
 }
 
 .form-container {
+  background-image: url('/src/assets/corn.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -378,8 +420,126 @@ footer .logo {
   gap: 10px;
 }
 
-/* Ensure the footer is always at the bottom, even if content is minimal */
-.main-content {
-  flex-grow: 1; /* Make sure the content area takes up remaining space */
+.legend {
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.animal-stats {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5); /* White background with semi-transparency */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow */  
+}
+
+.cow-container-container {
+  position: relative;
+  height: 334px;
+  width: 512px;
+}
+
+.cow-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.cow-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 5;
+
+}
+
+.footer-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-stats-label {
+  display: flex;
+}
+
+.color-sample {
+  width: 10px;
+  height: 10px;
+}
+
+.show-db-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  background-color: transparent;
+}
+
+.widgets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  background-color: rgba(255, 255, 255, 0.5); /* White background with semi-transparency */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow */ 
+  margin: 2%;
+}
+
+.widgets-animals {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow */ 
+  margin: 2%;
+}
+
+.booked-date {
+  background-color: tomato;
+  color: white;
+  border-radius: 50;
+}
+
+.range-start-date {
+  background-color: #77a2f7;
+}
+
+.range-middle-date {
+  background-color: #0d6efd;
+}
+
+.range-end-date {
+  background-color: #77a2f7;
+}
+
+.stats-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-bar {
+  width: 100%;
+}
+
+.died {
+  background-color: rgb(204, 169, 221);
+}
+
+.alive {
+  background-color: rgb(180, 211, 178);
+}
+
+.sold {
+  background-color: rgb(253, 253, 150);
+}
+
+.sick {
+  background-color: rgb(255, 205, 197);
 }
 

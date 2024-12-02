@@ -14,7 +14,7 @@ function Footer() {
           <i className="bi bi-instagram fs-2"></i> {/* Bootstrap Instagram Icon */}
         </a>
       </div>
-      <div>&copy; 2024 MyFarm. All rights reserved.</div>
+      <div className="legend">&copy; 2024 MyFarm. All rights reserved.</div>
       <div className="logo">
         <img src="/src/assets/logo.png" alt="Company Logo" width="100" />
       </div>

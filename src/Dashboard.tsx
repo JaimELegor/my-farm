@@ -6,7 +6,7 @@ function Dashboard() {
     <>
       <Header tabs={false} />
       <div className='dashboard'>
-        <a href='/dashboard/ganado' className='dashboard-child'>
+        <a href='/dashboard/animal' className='dashboard-child'>
           <h3>GANADO</h3>
           <img src='/src/assets/ganado.png' alt='lol' />
         </a>
@@ -16,7 +16,7 @@ function Dashboard() {
         </a>
         <a href='/dashboard/granjero' className='dashboard-child'>
           <h3>GRANJERO</h3>
-          <img src='granjero.png' alt='lol' />
+          <img src='/src/assets/granjero.png' alt='lol' />
         </a>
         <a href='/dashboard/tratamiento' className='dashboard-child'>
           <h3>TRATAMIENTO</h3>
